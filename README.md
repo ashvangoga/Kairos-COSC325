@@ -1,2 +1,1 @@
-# kairos
-kairos repo
+# An AI-powered language learning app
