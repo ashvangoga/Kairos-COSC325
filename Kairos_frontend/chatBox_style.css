@@ -1,0 +1,109 @@
+
+
+/* Ensures padding and borders are included in the element's total width/height */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; /*Padding creates internal space within an element*/ 
+}
+
+body, html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    height: 100%;
+    background-color: #f4f4f8;
+}
+
+/* This makes app fill the entire phone screen */
+.chat-container {
+    display: flex;
+    flex-direction: column; /* Stacks header, chat, and input vertically */
+    height: 100vh; /* 100% of the viewport height */
+    max-width: 800px; /* Set a max-width for wider screens */
+    margin: 0 auto; /* Center the container on desktops */
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05); /* Adds a subtle shadow on desktop */
+}
+/* This makes the top geader */
+.chat-header {
+    padding: 20px;
+    background-color: #2817c2; 
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* --- CHAT WINDOW --- */
+
+/* This is the main message area */
+.chat-window {
+    flex-grow: 1; /* flex allows this area to grow and fill available space */
+    padding: 20px;
+    overflow-y: auto; /* adds a scrollbar  if messages overflow */
+    display: flex;
+    flex-direction: column; /* Stacks messages vertically */
+    gap: 15px; /* Adds space between message bubbles */
+    background-color: #000000;
+   
+}
+
+/* message bubbles styles */
+.message {
+    max-width: 75%; 
+    padding: 12px 18px;
+    border-radius: 20px;
+    line-height: 1.4;
+}
+
+/* AI Message: Aligned left, grey bubble  */
+.message.ai-message {
+    align-self: flex-start; /* Aligns to the left */
+    background-color: #333333;
+    color: #fdfdfd;
+}
+
+/* User Message: Aligned right, blue bubble  */
+.message.user-message {
+    align-self: flex-end; /* Aligns to the right */
+    background-color: #007bff; /* Standard "user" blue */
+    color: #fff;
+}
+
+
+/* --- CHAT INPUT --- */
+
+.chat-input-area {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input-form {
+    display: flex; /* Makes the input and button sit side-by-side */
+    gap: 10px; /* Space between input and button */
+}
+
+/* The text input box */
+.chat-input-form input {
+    flex-grow: 1; /* Allows the input to grow and fill the space */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 12px 15px;
+    font-size: 1rem;
+}
+
+/*  send button */
+.chat-input-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer; 
+    transition: background-color 0.2s;
+}
+
+.chat-input-form button:hover {
+    background-color: #0056b3;
+}
